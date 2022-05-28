@@ -2,13 +2,20 @@
     <div class="lateral-esquerda">
         <h1>Finanças 4.0</h1>
         <h4>Organize sua vida finançeira</h4>
+        <img src="../../assets/fundo.jpeg" alt="Imagem Fundo">
     </div>
     <div class="latera-direita" *ngIf="!isCadastro" >
         <h1 class="login-text">
             Login
         </h1>
-        <input class="input" placeholder="E-mail"/>
-        <input class="input" />
+        <div class="label-float">
+            <input class="input" placeholder="E-mail"/>
+            <label for="">E-Mail</label>
+        </div>
+        <div class="label-float">
+            <input class="input" placeholder="E-mail"/>
+            <label for="">Senha</label>
+        </div>
         <button class="button">
             Entrar
         </button>
@@ -18,10 +25,21 @@
         <h1 class="login-text">
             Cadastrar-se
         </h1>
-        <input class="input" placeholder="E-mail"/>
-        <input class="input" />
-        <input class="input" />
-        <input class="input" />
+        <div class="label-float">
+            <input class="input" placeholder="E-mail"/>
+            <label for="">E-Mail</label>
+        </div>
+        <div class="label-float">
+            <input class="input" placeholder="E-mail"/>
+            <label for="">Repetir E-mail</label>
+        </div><div class="label-float">
+            <input class="input" placeholder="E-mail"/>
+            <label for="">Senha</label>
+        </div>
+        <div class="label-float">
+            <input class="input" placeholder="E-mail"/>
+            <label for="">Repetir Senha</label>
+        </div>
         <button class="button">
             Cadastrar
         </button>
