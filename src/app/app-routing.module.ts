@@ -1,3 +1,4 @@
+import { TelaInicialComponent } from './tela-inicial/tela-inicial.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MatFormFieldModule } from '@angular/material/form-field'
@@ -8,7 +9,7 @@ import { TelaDespesasComponent } from './tela-despesas/tela-despesas.component'
 
 const routes: Routes = [
   {
-  path: "",
+  path: "home",
   component: HomeComponent
   },
   {
@@ -18,6 +19,10 @@ const routes: Routes = [
   {
     path: "tela-despesas",
     component: TelaDespesasComponent
+  },
+  {
+    path: "",
+    component: TelaInicialComponent
   }
 ];
 

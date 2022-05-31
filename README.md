@@ -1,6 +1,6 @@
-# AppFinancas
+# Finanças 4.0
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.
+Aplicativo feito como projeto para a materia de usabilidade de software no curso de Sistemas de informação na Unifacisa.
 
 ## Development server
 

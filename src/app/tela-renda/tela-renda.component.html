@@ -1,14 +1,14 @@
 <div class="fundo">
-
+    <app-nav></app-nav>
     <div class="latera-direita" *ngIf="!isCadastro && !isCadastroCategoria" >
       <h1 class="login-text">
         Renda
       </h1>
-      <div scope="row" class="botoes-alinhados">
-        <button (click)="setIsCadastro()" class="btn btn-primary pull-left botao1">+ Nova renda</button>
-        <button (click)="setIsCategoria()" class="btn btn-primary pull-right">+ Nova categoria</button>
-      </div>
       <div class="table-responsive">
+        <div scope="row" class="botoes-alinhados">
+          <button (click)="setIsCadastro()" class="btn btn-primary pull-left botao1">+ Nova renda</button>
+          <button (click)="setIsCategoria()" class="btn btn-primary pull-right">+ Nova categoria</button>
+        </div>
         <table class="table">
             <thead class="thead-dark">
               <tr>
@@ -16,29 +16,29 @@
                   <span>Data</span>
 
                 </th>
-                <th scope="col">
-                  <span>Valor</span>
+              <th scope="col">
+                <span>Valor</span>
 
-                </th>
-                <th scope="col">
-                  <span>Descrição</span>
+              </th>
+              <th scope="col">
+                <span>Descrição</span>
 
-                </th>
-                <th scope="col">
-                  <span>Categoria</span>
+              </th>
+              <th scope="col">
+                <span>Categoria</span>
 
-                </th>
-                <th scope="col">
+              </th>
+              <th scope="col">
 
-                </th>
-                <th scope="col">
+              </th>
+              <th scope="col">
 
-                </th>
-                <th scope="col">
+              </th>
+              <th scope="col">
 
-                </th>
-              </tr>
-            </thead>
+              </th>
+            </tr>
+          </thead>
           <tbody *ngIf="rendas">
             <tr scope="row" *ngFor="let renda of rendas">
               <td>{{renda.data}}</td>
@@ -47,69 +47,57 @@
               <td>{{renda.categoria}}</td>
               <td></td>
               <td></td>
-              <div class="btn-group flex-btn-group-container">
+              <div class="btn-group flex-btn-group-container btn-table">
                 <div class="col-8">
                   <td>
-                    <span class="material-icons">visibility</span>
+                    <button class="material-icons">visibility</button>
                   </td>
-                  <td><span class="material-icons deletar">delete</span></td>
+                  <td><button class="material-icons deletar">delete</button></td>
                 </div>
               </div>
-
             </tr>
-
-
           </tbody>
-
-
-
         </table>
+    </div>
+  </div>
 
+  <div class="latera-direita" *ngIf="isCadastro" >
+    <h1 class="login-text" >
+        Adicionar renda
+    </h1>
+    <div class="label-float">
+      <input class="input" placeholder="Data"/>
+      <label for="">Data</label>
+    </div>
+    <div class="label-float">
+      <input class="input" placeholder="Valor"/>
+      <label for="">Valor</label>
+    </div><div class="label-float">
+    <input class="input" placeholder="Descrição"/>
+    <label for="">Descrição</label>
+  </div>
+    <div class="label-float">
+      <input class="input" placeholder="Categoria"/>
+      <label for="">Categoria</label>
+    </div>
+    <button class="button">
+      Adicionar
+    </button>
+    <button (click)="setIsCadastro()" class="button-voltar">Voltar</button>
+  </div>
 
-
-      </div>
-
-
-
+  <div class="latera-direita" *ngIf="isCadastroCategoria" >
+    <h1 class="login-text" >
+      Adicionar categoria
+    </h1>
+    <div class="label-float">
+      <input class="input" placeholder="Categoria"/>
+      <label for="">Categoria</label>
     </div>
 
-    <div class="latera-direita" *ngIf="isCadastro" >
-      <h1 class="login-text" >
-          Adicionar renda
-      </h1>
-      <div class="label-float">
-        <input class="input" placeholder="Data"/>
-        <label for="">Data</label>
-      </div>
-      <div class="label-float">
-        <input class="input" placeholder="Valor"/>
-        <label for="">Valor</label>
-      </div><div class="label-float">
-      <input class="input" placeholder="Descrição"/>
-      <label for="">Descrição</label>
-    </div>
-      <div class="label-float">
-        <input class="input" placeholder="Categoria"/>
-        <label for="">Categoria</label>
-      </div>
-      <button class="button">
-        Adicionar
-      </button>
-      <button (click)="setIsCadastro()" class="button-voltar">Voltar</button>
-    </div>
-
-    <div class="latera-direita2" *ngIf="isCadastroCategoria" >
-      <h1 class="login-text" >
-        Adicionar categoria
-      </h1>
-      <div class="label-float">
-        <input class="input" placeholder="Categoria"/>
-        <label for="">Categoria</label>
-      </div>
-
-      <button class="button">
-        Adicionar
-      </button>
-      <button (click)="setIsCategoria()" class="button-voltar">Voltar</button>
-    </div>
+    <button class="button">
+      Adicionar
+    </button>
+    <button (click)="setIsCategoria()" class="button-voltar">Voltar</button>
+  </div>
 </div>
