@@ -63,6 +63,14 @@ input {
     padding-top: 10px;
     padding-left: 8px;
 }
+
+.error {
+    border: 2px solid red;
+}
+
+.error-message{
+    color: red;
+}
 .label-float{
     position: relative;
     padding-top: 12px;

@@ -9,14 +9,20 @@
             Login
         </h1>
         <div class="label-float">
-            <input class="input" placeholder="E-mail" type="email"/>
+            <input [class]="getInputClass()" placeholder="E-mail" type="email" [(ngModel)]="email" />
             <label for="">E-Mail</label>
         </div>
+        <span class="error-message" *ngIf="!isFormValid" >
+            E-mail obrigatorio
+        </span>
         <div class="label-float">
-            <input class="input" placeholder="E-mail" type="password"/>
+            <input [class]="getInputClass()" placeholder="E-mail" type="password" [(ngModel)]="password" />
             <label for="">Senha</label>
         </div>
-        <button class="button">
+        <span class="error-message" *ngIf="!isFormValid">
+            Senha obrigatoria
+        </span>
+        <button (click)="checkFormValid()" class="button">
             Entrar
         </button>
         <button (click)="setIsCadastro()" class="button-cadastro">Cadastre-se</button>
@@ -26,22 +32,34 @@
             Cadastrar-se
         </h1>
         <div class="label-float">
-            <input class="input" placeholder="E-mail" type="email"/>
+            <input [class]="getInputClass()" placeholder="E-mail" type="email" [(ngModel)]="email2"/>
             <label for="">E-Mail</label>
         </div>
+        <span class="error-message" *ngIf="!isFormValid" >
+            E-mail obrigatorio
+        </span>
         <div class="label-float">
-            <input class="input" placeholder="E-mail" type="email"/>
+            <input [class]="getInputClass()" placeholder="E-mail" type="email" [(ngModel)]="email3"/>
             <label for="">Repetir E-mail</label>
         </div>
+        <span class="error-message" *ngIf="!isFormValid" >
+            favor repetir o e-mail
+        </span>
         <div class="label-float">
-            <input class="input" placeholder="E-mail" type="password"/>
+            <input [class]="getInputClass()" placeholder="E-mail" type="password" [(ngModel)]="password2"/>
             <label for="">Senha</label>
         </div>
+        <span class="error-message" *ngIf="!isFormValid" >
+            Senha obrigatorio
+        </span>
         <div class="label-float">
-            <input class="input" placeholder="E-mail" type="password"/>
+            <input [class]="getInputClass()" placeholder="E-mail" type="password" [(ngModel)]="password3"/>
             <label for="">Repetir Senha</label>
         </div>
-        <button class="button">
+        <span class="error-message" *ngIf="!isFormValid" >
+            Favor repetir a senha.
+        </span>
+        <button class="button" (click)="checkFormValid()">
             Cadastrar
         </button>
         <button (click)="setIsCadastro()" class="button-voltar">Voltar</button>

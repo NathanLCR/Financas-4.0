@@ -8,6 +8,14 @@ import { Component, OnInit } from '@angular/core';
 export class TelaInicialComponent implements OnInit {
 
   isCadastro = false;
+  isFormValid = true;
+  email = '';
+  password = '';
+
+  email2 = '';
+  password2 = '';
+  email3 = '';
+  password3 = '';
 
   constructor() { }
 
@@ -16,6 +24,20 @@ export class TelaInicialComponent implements OnInit {
 
   setIsCadastro() {
     this.isCadastro = !this.isCadastro
+    this.isFormValid = true;
   }
 
+  checkFormValid() {
+    if (!this.isCadastro) {
+      this.isFormValid = this.email != '' && this.password != '';
+      return
+    }
+
+    this.isFormValid = this.email2 != '' && this.email3 != '' && this.password2 != '' && this.password3 != '';
+  }
+
+
+  getInputClass() {
+    return this.isFormValid ? "input" : "input error"
+  }
 }
