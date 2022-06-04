@@ -1,3 +1,103 @@
 <div class="fundo">
     <app-nav></app-nav>
+    <div class="latera-direita" *ngIf="!isCadastro && !isCadastroCategoria" >
+        <h1 class="login-text">
+          Despesas
+        </h1>
+        <div class="table-responsive">
+          <div scope="row" class="botoes-alinhados">
+            <button (click)="setIsCadastro()" class="btn btn-primary pull-left botao1">+ Nova despesa</button>
+            <button (click)="setIsCategoria()" class="btn btn-primary pull-right">+ Nova categoria</button>
+          </div>
+          <table class="table">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">
+                    <span>Data</span>
+  
+                  </th>
+                <th scope="col">
+                  <span>Valor</span>
+  
+                </th>
+                <th scope="col">
+                  <span>Descrição</span>
+  
+                </th>
+                <th scope="col">
+                  <span>Categoria</span>
+  
+                </th>
+                <th scope="col">
+  
+                </th>
+                <th scope="col">
+  
+                </th>
+                <th scope="col">
+  
+                </th>
+              </tr>
+            </thead>
+            <tbody *ngIf="despesas">
+              <tr scope="row" *ngFor="let despesa of despesas">
+                <td>{{despesa.data}}</td>
+                <td>{{despesa.valor}} R$</td>
+                <td>{{despesa.descricao}}</td>
+                <td>{{despesa.categoria}}</td>
+                <td></td>
+                <td></td>
+                <div class="btn-group flex-btn-group-container btn-table">
+                  <div class="col-8">
+                    <td>
+                      <button class="material-icons">visibility</button>
+                    </td>
+                    <td><button class="material-icons deletar">delete</button></td>
+                  </div>
+                </div>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+    </div>
+  
+    <div class="latera-direita" *ngIf="isCadastro" >
+      <h1 class="login-text" >
+          Adicionar despesa
+      </h1>
+      <div class="label-float">
+        <input class="input" placeholder="Data" id="data"/>
+        <label for="">Data</label>
+      </div>
+      <div class="label-float">
+        <input class="input" placeholder="Valor" id="valor"/>
+        <label for="">Valor</label>
+      </div><div class="label-float">
+      <input class="input" placeholder="Descrição" id="descricao"/>
+      <label for="">Descrição</label>
+    </div>
+      <div class="label-float">
+        <input class="input" placeholder="Categoria" id="categoria"/>
+        <label for="">Categoria</label>
+      </div>
+      <button class="button" (click)="addDespesa()">
+        Adicionar
+      </button>
+      <button (click)="setIsCadastro()" class="button-voltar">Voltar</button>
+    </div>
+  
+    <div class="latera-direita" *ngIf="isCadastroCategoria" >
+      <h1 class="login-text" >
+        Adicionar categoria
+      </h1>
+      <div class="label-float">
+        <input class="input" placeholder="Categoria"/>
+        <label for="">Categoria</label>
+      </div>
+  
+      <button class="button">
+        Adicionar
+      </button>
+      <button (click)="setIsCategoria()" class="button-voltar">Voltar</button>
+    </div>
 </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as $ from 'jquery'
 
 @Component({
   selector: 'app-tela-renda',
@@ -12,14 +13,12 @@ export class TelaRendaComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.popularRendas();
+
   }
 
-  popularRendas() {
-    for (var i = 0; i < 5 ; i++){
-      this.rendas.push({data: "29/05/2022", valor: 2000, descricao: "salario de desenvolvedor", categoria: "desenvolvedor"})
-    }
-
+  addRenda() {
+    this.rendas.push({data: $('#data').val(), valor: $('#valor').val(), descricao: $('#descricao').val(), categoria: $('#categoria').val()})
+    this.isCadastro = !this.isCadastro
   }
 
   setIsCadastro() {

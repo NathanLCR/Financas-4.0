@@ -66,21 +66,21 @@
         Adicionar renda
     </h1>
     <div class="label-float">
-      <input class="input" placeholder="Data"/>
+      <input class="input" placeholder="Data" id="data"/>
       <label for="">Data</label>
     </div>
     <div class="label-float">
-      <input class="input" placeholder="Valor"/>
+      <input class="input" placeholder="Valor" id="valor"/>
       <label for="">Valor</label>
     </div><div class="label-float">
-    <input class="input" placeholder="Descrição"/>
+    <input class="input" placeholder="Descrição" id="descricao"/>
     <label for="">Descrição</label>
   </div>
     <div class="label-float">
-      <input class="input" placeholder="Categoria"/>
+      <input class="input" placeholder="Categoria" id="categoria"/>
       <label for="">Categoria</label>
     </div>
-    <button class="button">
+    <button class="button" (click)="addRenda()">
       Adicionar
     </button>
     <button (click)="setIsCadastro()" class="button-voltar">Voltar</button>
