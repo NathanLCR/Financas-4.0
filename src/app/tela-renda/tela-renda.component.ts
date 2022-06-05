@@ -10,14 +10,18 @@ export class TelaRendaComponent implements OnInit {
   isCadastro = false;
   isCadastroCategoria = false;
   rendas = [] as any;
-  constructor() { }
+  pos = 0;
+  constructor() {
+    console.log(this.rendas)
+  }
 
   ngOnInit(): void {
 
   }
 
   addRenda() {
-    this.rendas.push({data: $('#data').val(), valor: $('#valor').val(), descricao: $('#descricao').val(), categoria: $('#categoria').val()})
+    this.rendas.push({indice: this.pos,data: $('#data').val(), valor: $('#valor').val(), descricao: $('#descricao').val(), categoria: $('#categoria').val()})
+    this.pos++;
     this.isCadastro = !this.isCadastro
   }
 
@@ -27,5 +31,9 @@ export class TelaRendaComponent implements OnInit {
 
   setIsCategoria() {
     this.isCadastroCategoria = !this.isCadastroCategoria
+  }
+
+  deleteRenda() {
+    this.rendas.pop();
   }
 }

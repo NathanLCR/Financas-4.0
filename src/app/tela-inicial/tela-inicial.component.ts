@@ -21,8 +21,8 @@ export class TelaInicialComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
+
 
   setIsCadastro() {
     this.isCadastro = !this.isCadastro
@@ -32,7 +32,7 @@ export class TelaInicialComponent implements OnInit {
   direcionar() {
     if(this.isFormValid){
       this.routerLink = "/home"
-    } 
+    }
   }
 
   checkFormValid() {

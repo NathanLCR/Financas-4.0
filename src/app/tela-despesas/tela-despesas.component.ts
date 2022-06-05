@@ -13,7 +13,7 @@ export class TelaDespesasComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-
+    console.log(this.despesas)
   }
 
   addDespesa() {
@@ -28,5 +28,10 @@ export class TelaDespesasComponent implements OnInit {
   setIsCategoria() {
     this.isCadastroCategoria = !this.isCadastroCategoria
   }
+
+  deleteDespesa() {
+    this.despesas.pop();
+  }
+
 
 }
