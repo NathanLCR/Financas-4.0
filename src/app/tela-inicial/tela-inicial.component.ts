@@ -17,6 +17,8 @@ export class TelaInicialComponent implements OnInit {
   email3 = '';
   password3 = '';
 
+  routerLink = '';
+
   constructor() { }
 
   ngOnInit(): void {
@@ -25,6 +27,12 @@ export class TelaInicialComponent implements OnInit {
   setIsCadastro() {
     this.isCadastro = !this.isCadastro
     this.isFormValid = true;
+  }
+
+  direcionar() {
+    if(this.isFormValid){
+      this.routerLink = "/home"
+    } 
   }
 
   checkFormValid() {

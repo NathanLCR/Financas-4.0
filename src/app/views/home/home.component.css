@@ -20,3 +20,42 @@
 .home .subtitle {
     font-size: 1.1em;
 }
+
+.holder {
+    display: flex;
+    justify-content: center;
+}
+.imagem {
+  width: 200px;
+  margin: 10px;
+  position: relative;
+  text-align: center;
+}
+.imagem::after {
+  content: attr(data-title); /* estilo que coloco a legenda no lugar */
+  position: absolute;
+  width: 100%;
+  bottom: -20px;
+  left: 0;
+}
+
+
+.holder {
+    display: flex;
+    justify-content: center;
+
+}
+
+.graficos{
+    padding-top: 50px;
+}
+
+.grafico1{
+    width: 350px;
+    float: left;
+}
+
+.grafico2{
+    width: 350px;
+    float: right;
+}

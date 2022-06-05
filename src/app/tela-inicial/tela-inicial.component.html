@@ -22,7 +22,7 @@
         <span class="error-message" *ngIf="!isFormValid">
             Senha obrigatoria
         </span>
-        <button (click)="checkFormValid()" class="button">
+        <button (click)="checkFormValid()" class="button" (click)="direcionar()" routerLink="{{routerLink}}">
             Entrar
         </button>
         <button (click)="setIsCadastro()" class="button-cadastro">Cadastre-se</button>
